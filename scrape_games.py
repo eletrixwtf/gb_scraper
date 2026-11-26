@@ -1,3 +1,11 @@
+"""
+GameBounty daily scraper.
+
+  python scrape_games.py                     # daily job
+  python scrape_games.py --onegame juice-galaxy
+  FORCE=1 WORKERS=8 python scrape_games.py   # bypass canary / tune concurrency
+"""
+import argparse
 import base64
 import binascii
 import json
@@ -5,7 +13,9 @@ import os
 import random
 import re
 import sys
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from urllib.parse import unquote, urlparse
 
 import requests
@@ -19,9 +29,9 @@ OUT_FILE = "games_list.json"
 CACHE_FILE = "_probe_cache.json"
 CACHE_TTL = 86400
 DELAY_LIST = (0.4, 1.0)
-DELAY_DETAIL = (0.5, 1.2)
 MAX_ATTEMPTS = 4
 FORCE = os.environ.get("FORCE") == "1"
+WORKERS = int(os.environ.get("WORKERS", "8"))
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
 
@@ -34,9 +44,13 @@ DEAD_WEAK = ("deleted", "has been removed", "was removed", "no longer available"
              "expired", "page not found", "could not be found")
 ALIVE_MARKERS = ("download", "filename", "file name", "file size", "click here")
 XFS_HOSTS = ("datanodes.to", "fileq.net")
+
+_local = threading.local()
+_cache_lock = threading.Lock()
 _pw = {"pw": None, "browser": None, "ctx": None}
 
 
+# ------------------------------------------------------------------ plumbing
 def session():
     s = requests.Session()
     s.headers.update({"User-Agent": UA, "Accept": "application/json, */*",
@@ -45,6 +59,12 @@ def session():
         total=3, backoff_factor=1.5, status_forcelist=[429, 500, 502, 503, 504],
         allowed_methods=["GET"])))
     return s
+
+
+def tls_session():
+    if not hasattr(_local, "s"):
+        _local.s = session()
+    return _local.s
 
 
 def browser_get(url):
@@ -82,6 +102,7 @@ def get_json(s, url):
 
 
 def unwrap(url):
+    """https://gamebounty.st/api/dl/{slug}/{b64} -> real host URL."""
     if "/api/dl/" not in url:
         return url
     b64 = url.split("/api/dl/", 1)[1].split("/", 1)[-1]
@@ -90,6 +111,14 @@ def unwrap(url):
         return base64.urlsafe_b64decode(b64).decode("utf-8", "replace")
     except (binascii.Error, ValueError):
         return url
+
+
+def parse_slug(v):
+    p = unquote(urlparse(v).path) if v.startswith("http") else unquote(v)
+    p = p.strip("/")
+    if p.endswith("-free-pc-download"):
+        p = p[: -len("-free-pc-download")]
+    return p
 
 
 def norm_sources(raw):
@@ -104,6 +133,25 @@ def norm_sources(raw):
     return " + ".join(out), "sovereign" in s
 
 
+def as_id(a):
+    return int(a) if a and str(a).isdigit() else None
+
+
+def load_cache():
+    try:
+        return json.load(open(CACHE_FILE, encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+def save_cache(c):
+    try:
+        json.dump(c, open(CACHE_FILE, "w", encoding="utf-8"))
+    except Exception:
+        pass
+
+
+# ------------------------------------------------------------ link liveness
 def _pixeldrain(url, host, s):
     if "pixeldrain.com" not in host and "pixeldrain.com" not in url:
         return None
@@ -176,7 +224,8 @@ def _html(url, s):
 
 
 def assess(url, host, s, cache):
-    hit = cache.get(url)
+    with _cache_lock:
+        hit = cache.get(url)
     if hit and time.time() - hit.get("ts", 0) < CACHE_TTL:
         return hit["state"]
     res = None
@@ -187,24 +236,72 @@ def assess(url, host, s, cache):
         res = None
     if res is None:
         res = _html(url, s)
-    cache[url] = {"state": res[0], "reason": res[1], "ts": time.time()}
+    with _cache_lock:
+        cache[url] = {"state": res[0], "reason": res[1], "ts": time.time()}
     return res[0]
 
 
 def mirrors_of(detail, s, cache):
-    out = []
+    """One probe per host; dead hosts dropped entirely."""
+    out, verdicts = [], {}
     for m in (detail.get("container") or {}).get("data", {}).get("mirrors") or []:
         host = m.get("name") or "unknown"
-        for link in m.get("links") or []:
-            w = link.get("url")
-            if not w:
-                continue
-            u = unwrap(w)
-            if assess(u, host, s, cache) != "dead":
-                out.append({"url": u, "host": host})
+        links = [l for l in (m.get("links") or []) if l.get("url")]
+        if not links:
+            continue
+        if host not in verdicts:
+            verdicts[host] = assess(unwrap(links[0]["url"]), host, s, cache)
+        if verdicts[host] == "dead":
+            continue
+        for l in links:
+            out.append({"url": unwrap(l["url"]), "host": host})
     return out
 
 
+# -------------------------------------------------------------------- output
+def appid_state(appid, detail):
+    a = as_id(appid)
+    if a:
+        return a
+    if detail.get("epic_slug"):
+        return "non_steam_game"
+    return "no_id_provided"
+
+
+def build(g, detail, mirrors):
+    state = appid_state(g.get("appid"), detail)
+    src, sov = norm_sources(detail.get("sources"))
+    return {
+        "title": g["title"],
+        "url": f"{BASE}/{g['slug']}-free-pc-download",
+        "slug": g["slug"],
+        "appid": state,
+        "has_appid": isinstance(state, int),
+        "sources": src,
+        "is_sovereign": sov,
+        "mirrors": mirrors,
+    }
+
+
+def onegame(s, arg):
+    slug = parse_slug(arg)
+    if not slug:
+        print("❌ Could not parse a slug")
+        return 1
+    d = get_json(s, f"{API}/{slug}").get("data", {})
+    if not d:
+        print("❌ Empty payload")
+        return 1
+    cache = load_cache()
+    kept = mirrors_of(d, s, cache)
+    save_cache(cache)
+    print(f"🔗 {len(kept)} live mirror(s)")
+    print(json.dumps(build({"slug": slug, "title": d.get("title")}, d, kept),
+                     indent=2, ensure_ascii=False))
+    return 0
+
+
+# ---------------------------------------------------------------------- bulk
 def fetch_list(s):
     games, seen, page, total = [], set(), 1, None
     while True:
@@ -218,7 +315,8 @@ def fetch_list(s):
             if g.get("slug") and g["slug"] not in seen:
                 seen.add(g["slug"])
                 games.append({"slug": g["slug"],
-                              "title": (g.get("title") or "").strip()})
+                              "title": (g.get("title") or "").strip(),
+                              "appid": g.get("appid")})
         if total and len(games) >= total:
             break
         page += 1
@@ -226,10 +324,22 @@ def fetch_list(s):
     return games
 
 
-def main():
-    s = session()
-    print("🚀 GameBounty daily")
+def work(g, cache):
+    s = tls_session()
+    d = get_json(s, f"{API}/{g['slug']}").get("data", {})
+    return build(g, d, mirrors_of(d, s, cache))
 
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--onegame", metavar="URL_OR_SLUG")
+    a = ap.parse_args()
+
+    s = session()
+    if a.onegame:
+        sys.exit(onegame(s, a.onegame))
+
+    print("🚀 GameBounty daily")
     prev = {}
     if os.path.exists(OUT_FILE):
         try:
@@ -238,58 +348,60 @@ def main():
                     prev[r["slug"]] = r
         except Exception:
             prev = {}
-    print(f"📄 {len(prev)} previously known")
+    print(f"📄 {len(prev)} known")
 
     try:
         games = fetch_list(s)
     except Exception as e:
         print(f"❌ list failed: {e}")
         sys.exit(1)
-    print(f"✅ {len(games)} games listed")
+    print(f"✅ {len(games)} listed")
 
-    cache = {}
-    if os.path.exists(CACHE_FILE):
-        try:
-            cache = json.load(open(CACHE_FILE, encoding="utf-8"))
-        except Exception:
-            cache = {}
+    cache = load_cache()
+    order = {g["slug"]: i for i, g in enumerate(games)}
+    out, todo, reused, failed = [], [], 0, 0
 
-    out, reused, fetched, failed = [], 0, 0, 0
-    for i, g in enumerate(games, 1):
+    for g in games:
         old = prev.get(g["slug"])
-        if old and old.get("mirrors"):
+        if old and "mirrors" in old:
+            old["appid"] = as_id(g.get("appid")) or \
+                old.get("appid") or "no_id_provided"
+            old["has_appid"] = isinstance(old["appid"], int)
             out.append(old)
             reused += 1
-            continue
-        try:
-            d = get_json(s, f"{API}/{g['slug']}").get("data", {})
-            src, sov = norm_sources(d.get("sources"))
-            out.append({"title": g["title"],
-                        "url": f"{BASE}/{g['slug']}-free-pc-download",
-                        "slug": g["slug"], "sources": src,
-                        "is_sovereign": sov,
-                        "mirrors": mirrors_of(d, s, cache)})
-            fetched += 1
-            print(f"   [{i}/{len(games)}] {g['slug']}")
-        except Exception as e:
-            failed += 1
-            print(f"   ❌ {g['slug']}: {type(e).__name__}")
-        if fetched and fetched % 20 == 0:
-            json.dump(cache, open(CACHE_FILE, "w", encoding="utf-8"))
-        time.sleep(random.uniform(*DELAY_DETAIL))
+        else:
+            todo.append(g)
 
-    print(f"📊 {reused} reused, {fetched} fetched, {failed} failed")
+    print(f"♻️ {reused} reused, 🔧 {len(todo)} to fetch ({WORKERS} workers)")
 
-    if prev and len(out) < len(prev) * 0.9 and not FORCE:
-        print(f"🛑 canary: {len(out)} vs {len(prev)} (>10% drop)")
-        json.dump(out, open(OUT_FILE, "w", encoding="utf-8"),
-                  indent=2, ensure_ascii=False)
-        json.dump(cache, open(CACHE_FILE, "w", encoding="utf-8"))
-        sys.exit(2)
+    done = 0
+    with ThreadPoolExecutor(max_workers=WORKERS) as ex:
+        futs = {ex.submit(work, g, cache): g for g in todo}
+        for fut in as_completed(futs):
+            g = futs[fut]
+            done += 1
+            try:
+                out.append(fut.result())
+            except Exception as e:
+                failed += 1
+                print(f"   ❌ {g['slug']}: {type(e).__name__}")
+            if done % 100 == 0:
+                json.dump(sorted(out, key=lambda r: order.get(r["slug"], 0)),
+                          open(OUT_FILE, "w", encoding="utf-8"),
+                          indent=2, ensure_ascii=False)
+                save_cache(cache)
+                print(f"   💾 checkpoint {len(out)} ({done}/{len(todo)})")
+
+    out.sort(key=lambda r: order.get(r["slug"], 0))
+    print(f"📊 {reused} reused, {len(todo) - failed} fetched, {failed} failed")
 
     json.dump(out, open(OUT_FILE, "w", encoding="utf-8"),
               indent=2, ensure_ascii=False)
-    json.dump(cache, open(CACHE_FILE, "w", encoding="utf-8"))
+    save_cache(cache)
+
+    if prev and len(out) < len(prev) * 0.9 and not FORCE:
+        print(f"🛑 canary: {len(out)} vs {len(prev)} (>10% drop)")
+        sys.exit(2)
     print(f"💾 saved {len(out)}")
 
 

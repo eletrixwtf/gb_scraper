@@ -1,5 +1,759 @@
 [
   {
+    "title": "Pionero Capital",
+    "url": "https://gamebounty.st/pionero-capital-free-pc-download",
+    "slug": "pionero-capital",
+    "appid": 3275210,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://filesyard.com/f/yDnRqKWZHa",
+        "host": "filesyard.com"
+      },
+      {
+        "url": "https://vikingfile.com/f/XO5EQKVoOB",
+        "host": "vikingfile.com"
+      }
+    ]
+  },
+  {
+    "title": "G-Rebels",
+    "url": "https://gamebounty.st/g-rebels-free-pc-download",
+    "slug": "g-rebels",
+    "appid": 2445980,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://filesyard.com/f/PB2Kc3CRfS",
+        "host": "filesyard.com"
+      },
+      {
+        "url": "https://vikingfile.com/f/7NlWCRE7Gh",
+        "host": "vikingfile.com"
+      }
+    ]
+  },
+  {
+    "title": "STEINS;GATE ELITE",
+    "url": "https://gamebounty.st/steins-gate-elite-free-pc-download",
+    "slug": "steins-gate-elite",
+    "appid": 819030,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://filesyard.com/f/mpy42ucHCH",
+        "host": "filesyard.com"
+      },
+      {
+        "url": "https://vikingfile.com/f/BxotwHBd9I",
+        "host": "vikingfile.com"
+      }
+    ]
+  },
+  {
+    "title": "Assassin’s Creed® Chronicles: China",
+    "url": "https://gamebounty.st/assassins-creed-chronicles-china-free-pc-download",
+    "slug": "assassins-creed-chronicles-china",
+    "appid": 354380,
+    "has_appid": true,
+    "sources": "CODEX",
+    "is_sovereign": false,
+    "mirrors": [
+      {
+        "url": "https://vikingfile.com/f/78U0zkwpl5",
+        "host": "vikingfile.com"
+      },
+      {
+        "url": "https://filesyard.com/f/UkPqwAT3Vt",
+        "host": "filesyard.com"
+      },
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/53af493ce13045707295/Assassins%20Creed%20Chronicles%20China.7z.001",
+        "host": "itsfileditchfiles.st"
+      }
+    ]
+  },
+  {
+    "title": "COCORO",
+    "url": "https://gamebounty.st/cocoro-free-pc-download",
+    "slug": "cocoro",
+    "appid": 4650950,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://vikingfile.com/f/0FNQ5NEcFm",
+        "host": "vikingfile.com"
+      },
+      {
+        "url": "https://filesyard.com/f/4Nufy8hK4b",
+        "host": "filesyard.com"
+      }
+    ]
+  },
+  {
+    "title": "Summer of '58",
+    "url": "https://gamebounty.st/summer-of-58-free-pc-download",
+    "slug": "summer-of-58",
+    "appid": 1609080,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://vikingfile.com/f/KMFLVO49Mh",
+        "host": "vikingfile.com"
+      },
+      {
+        "url": "https://filesyard.com/f/rtUK9Q8yDJ",
+        "host": "filesyard.com"
+      }
+    ]
+  },
+  {
+    "title": "The Revenge of Johnny Bonasera: Episode 1",
+    "url": "https://gamebounty.st/the-revenge-of-johnny-bonasera-episode-1-free-pc-download",
+    "slug": "the-revenge-of-johnny-bonasera-episode-1",
+    "appid": 536430,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://vikingfile.com/f/8Re8kSWx2r",
+        "host": "vikingfile.com"
+      },
+      {
+        "url": "https://filesyard.com/f/kfsnJu75Vd",
+        "host": "filesyard.com"
+      }
+    ]
+  },
+  {
+    "title": "E-Lich: Corporate Souls",
+    "url": "https://gamebounty.st/e-lich-corporate-souls-free-pc-download",
+    "slug": "e-lich-corporate-souls",
+    "appid": 2671450,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/6ce1858ff5e6adc1db89/E-Lich%20Corporate%20Souls.7z.001",
+        "host": "itsfileditchfiles.st"
+      },
+      {
+        "url": "https://filesyard.com/f/a5VWeYzqrF",
+        "host": "filesyard.com"
+      },
+      {
+        "url": "https://vikingfile.com/f/VveBmW0vuD",
+        "host": "vikingfile.com"
+      }
+    ]
+  },
+  {
+    "title": "The Town of Light",
+    "url": "https://gamebounty.st/the-town-of-light-free-pc-download",
+    "slug": "the-town-of-light",
+    "appid": 433100,
+    "has_appid": true,
+    "sources": "CODEX",
+    "is_sovereign": false,
+    "mirrors": [
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/2ad573ba792313df06b2/The%20Town%20of%20Light.7z.001",
+        "host": "itsfileditchfiles.st"
+      },
+      {
+        "url": "https://filesyard.com/f/QtyrhXDxt9",
+        "host": "filesyard.com"
+      },
+      {
+        "url": "https://vikingfile.com/f/necjyzJaKh",
+        "host": "vikingfile.com"
+      }
+    ]
+  },
+  {
+    "title": "Boxing World Simulator",
+    "url": "https://gamebounty.st/boxing-world-simulator-free-pc-download",
+    "slug": "boxing-world-simulator",
+    "appid": 4986600,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://vikingfile.com/f/IFVqZEx7ht",
+        "host": "vikingfile.com"
+      },
+      {
+        "url": "https://filesyard.com/f/NYwmpWz4G5",
+        "host": "filesyard.com"
+      },
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/a0e09d99632cd6389353/Boxing%20World%20Simulator.7z.001",
+        "host": "itsfileditchfiles.st"
+      }
+    ]
+  },
+  {
+    "title": "Little Big Adventure",
+    "url": "https://gamebounty.st/little-big-adventure-free-pc-download",
+    "slug": "little-big-adventure",
+    "appid": 397330,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://filesyard.com/f/j9UYA6K6Sx",
+        "host": "filesyard.com"
+      },
+      {
+        "url": "https://vikingfile.com/f/ASiWUN5RBP",
+        "host": "vikingfile.com"
+      },
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/46be3051441aefd98166/Little%20Big%20Adventure.7z.001",
+        "host": "itsfileditchfiles.st"
+      }
+    ]
+  },
+  {
+    "title": "Food Devils",
+    "url": "https://gamebounty.st/food-devils-free-pc-download",
+    "slug": "food-devils",
+    "appid": 2861730,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://vikingfile.com/f/jYxfIstnIu",
+        "host": "vikingfile.com"
+      },
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/95c753809f0ed5f3a672/Food%20Devils.7z.001",
+        "host": "itsfileditchfiles.st"
+      },
+      {
+        "url": "https://filesyard.com/f/UYa4gFqSwg",
+        "host": "filesyard.com"
+      }
+    ]
+  },
+  {
+    "title": "Nelly Cootalot: The Fowl Fleet",
+    "url": "https://gamebounty.st/nelly-cootalot-the-fowl-fleet-free-pc-download",
+    "slug": "nelly-cootalot-the-fowl-fleet",
+    "appid": 317320,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/42f5c42e6a04ffd83551/Nelly%20Cootalot%20The%20Fowl%20Fleet.7z.001",
+        "host": "itsfileditchfiles.st"
+      },
+      {
+        "url": "https://vikingfile.com/f/e7E2UeVCFI",
+        "host": "vikingfile.com"
+      },
+      {
+        "url": "https://filesyard.com/f/dZ4zmKQvWC",
+        "host": "filesyard.com"
+      }
+    ]
+  },
+  {
+    "title": "Reshine",
+    "url": "https://gamebounty.st/reshine-free-pc-download",
+    "slug": "reshine",
+    "appid": 4253570,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://vikingfile.com/f/VKCs7KBrrm",
+        "host": "vikingfile.com"
+      },
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/5e1c3778560350606fbf/Reshine.7z.001",
+        "host": "itsfileditchfiles.st"
+      },
+      {
+        "url": "https://filesyard.com/f/6yeD2RnWfJ",
+        "host": "filesyard.com"
+      }
+    ]
+  },
+  {
+    "title": "Afterparty",
+    "url": "https://gamebounty.st/afterparty-free-pc-download",
+    "slug": "afterparty",
+    "appid": 762220,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/b2ade4e8a6bcf5ead526/Afterparty.7z.001",
+        "host": "itsfileditchfiles.st"
+      },
+      {
+        "url": "https://vikingfile.com/f/lKroBU3ruz",
+        "host": "vikingfile.com"
+      },
+      {
+        "url": "https://filesyard.com/f/Cn3TxWpMtZ",
+        "host": "filesyard.com"
+      }
+    ]
+  },
+  {
+    "title": "Crazy Taxi",
+    "url": "https://gamebounty.st/crazy-taxi-free-pc-download",
+    "slug": "crazy-taxi",
+    "appid": 71230,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://vikingfile.com/f/iB8QkZGoIi",
+        "host": "vikingfile.com"
+      },
+      {
+        "url": "https://filesyard.com/f/qcAkFFxzZR",
+        "host": "filesyard.com"
+      },
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/0e09db967ae62183a7c0/Crazy%20Taxi.7z.001",
+        "host": "itsfileditchfiles.st"
+      }
+    ]
+  },
+  {
+    "title": "BrebeMan",
+    "url": "https://gamebounty.st/brebeman-free-pc-download",
+    "slug": "brebeman",
+    "appid": 3349980,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://filesyard.com/f/eDb6cXefS6",
+        "host": "filesyard.com"
+      },
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/1b70a7302ea1a77e0b53/BrebeMan.7z.001",
+        "host": "itsfileditchfiles.st"
+      },
+      {
+        "url": "https://vikingfile.com/f/TfaWg6Ycvr",
+        "host": "vikingfile.com"
+      }
+    ]
+  },
+  {
+    "title": "Alicemare",
+    "url": "https://gamebounty.st/alicemare-free-pc-download",
+    "slug": "alicemare",
+    "appid": 524850,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/ceb10421dcf3483d6905/Alicemare.7z.001",
+        "host": "itsfileditchfiles.st"
+      },
+      {
+        "url": "https://filesyard.com/f/hWXAUdJey3",
+        "host": "filesyard.com"
+      },
+      {
+        "url": "https://vikingfile.com/f/8sXFCgXOx8",
+        "host": "vikingfile.com"
+      }
+    ]
+  },
+  {
+    "title": "WiZmans World Re;Try",
+    "url": "https://gamebounty.st/wizmans-world-re-try-free-pc-download",
+    "slug": "wizmans-world-re-try",
+    "appid": 2214620,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/1602adcd3dad035803ac/WiZmans%20World%20Re%20Try.7z.001",
+        "host": "itsfileditchfiles.st"
+      },
+      {
+        "url": "https://filesyard.com/f/jpsxCwQCvF",
+        "host": "filesyard.com"
+      },
+      {
+        "url": "https://vikingfile.com/f/aNRt6nuxNy",
+        "host": "vikingfile.com"
+      }
+    ]
+  },
+  {
+    "title": "while True: learn()",
+    "url": "https://gamebounty.st/while-true-learn-free-pc-download",
+    "slug": "while-true-learn",
+    "appid": 619150,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/e9c2e53e88fcc5c1f995/while%20True%20learn.7z.001",
+        "host": "itsfileditchfiles.st"
+      },
+      {
+        "url": "https://filesyard.com/f/zjdvTysFPz",
+        "host": "filesyard.com"
+      },
+      {
+        "url": "https://vikingfile.com/f/ApEoqMMpMh",
+        "host": "vikingfile.com"
+      }
+    ]
+  },
+  {
+    "title": "Network & Cyber Security Simulator",
+    "url": "https://gamebounty.st/network-cyber-security-simulator-free-pc-download",
+    "slug": "network-cyber-security-simulator",
+    "appid": 4986050,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://vikingfile.com/f/RwQ132t5rc",
+        "host": "vikingfile.com"
+      },
+      {
+        "url": "https://filesyard.com/f/ewYCcBd2au",
+        "host": "filesyard.com"
+      }
+    ]
+  },
+  {
+    "title": "SECTOR ZERO",
+    "url": "https://gamebounty.st/sector-zero-free-pc-download",
+    "slug": "sector-zero",
+    "appid": 2352050,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://filesyard.com/f/8y75zJjxcT",
+        "host": "filesyard.com"
+      },
+      {
+        "url": "https://vikingfile.com/f/R7M29omb8w",
+        "host": "vikingfile.com"
+      },
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/3502ea437512f0731b4e/SECTOR%20ZERO.7z.001",
+        "host": "itsfileditchfiles.st"
+      }
+    ]
+  },
+  {
+    "title": "Symphony of War: The Nephilim Saga",
+    "url": "https://gamebounty.st/symphony-of-war-the-nephilim-saga-free-pc-download",
+    "slug": "symphony-of-war-the-nephilim-saga",
+    "appid": 1488200,
+    "has_appid": true,
+    "sources": "TENOKE",
+    "is_sovereign": false,
+    "mirrors": [
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/5f9ee08565ccb5ee3f52/SoW1%20Project.7z.001",
+        "host": "itsfileditchfiles.st"
+      },
+      {
+        "url": "https://filesyard.com/f/TBBbDWBdEs",
+        "host": "filesyard.com"
+      },
+      {
+        "url": "https://vikingfile.com/f/WPvlCjlgnu",
+        "host": "vikingfile.com"
+      }
+    ]
+  },
+  {
+    "title": "Genopanic",
+    "url": "https://gamebounty.st/genopanic-free-pc-download",
+    "slug": "genopanic",
+    "appid": 1984190,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://filesyard.com/f/7tMBdx7q3Z",
+        "host": "filesyard.com"
+      },
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/3d805f601bf72d76cbd9/Genopanic.7z.001",
+        "host": "itsfileditchfiles.st"
+      },
+      {
+        "url": "https://vikingfile.com/f/zqpZVTEzsm",
+        "host": "vikingfile.com"
+      }
+    ]
+  },
+  {
+    "title": "nail'd",
+    "url": "https://gamebounty.st/naild-free-pc-download",
+    "slug": "naild",
+    "appid": 40380,
+    "has_appid": true,
+    "sources": "Gamebounty CSF",
+    "is_sovereign": false,
+    "mirrors": [
+      {
+        "url": "https://filesyard.com/f/Ux6tjY5Ann",
+        "host": "filesyard.com"
+      },
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/e83806a15910df457308/Nail%20d.7z.001",
+        "host": "itsfileditchfiles.st"
+      },
+      {
+        "url": "https://vikingfile.com/f/pdaY9u6B8c",
+        "host": "vikingfile.com"
+      }
+    ]
+  },
+  {
+    "title": "Stellar Code",
+    "url": "https://gamebounty.st/stellar-code-free-pc-download",
+    "slug": "stellar-code",
+    "appid": 3411510,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://vikingfile.com/f/QNewNGH4x8",
+        "host": "vikingfile.com"
+      },
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/a260a29411188a96da3d/%E3%82%B9%E3%83%86%E3%83%A9%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%89.7z.001",
+        "host": "itsfileditchfiles.st"
+      },
+      {
+        "url": "https://filesyard.com/f/KVe44vGkvC",
+        "host": "filesyard.com"
+      }
+    ]
+  },
+  {
+    "title": "Green Project",
+    "url": "https://gamebounty.st/green-project-free-pc-download",
+    "slug": "green-project",
+    "appid": 1274490,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/50a072a4ed31b8264c7f/Green%20Project.7z.001",
+        "host": "itsfileditchfiles.st"
+      },
+      {
+        "url": "https://vikingfile.com/f/siVx3ROg2c",
+        "host": "vikingfile.com"
+      },
+      {
+        "url": "https://filesyard.com/f/ubsPVkpTV7",
+        "host": "filesyard.com"
+      }
+    ]
+  },
+  {
+    "title": "Salty Hounds",
+    "url": "https://gamebounty.st/salty-hounds-free-pc-download",
+    "slug": "salty-hounds",
+    "appid": 1876460,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://vikingfile.com/f/29SMOmX3ep",
+        "host": "vikingfile.com"
+      },
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/10df52c7fd3e4a94be50/Salty%20Hounds.7z.001",
+        "host": "itsfileditchfiles.st"
+      },
+      {
+        "url": "https://filesyard.com/f/Cab5fsThtn",
+        "host": "filesyard.com"
+      }
+    ]
+  },
+  {
+    "title": "My Adorable Ghost Story",
+    "url": "https://gamebounty.st/my-adorable-ghost-story-free-pc-download",
+    "slug": "my-adorable-ghost-story",
+    "appid": 4083180,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/0932c6af058098e76434/My%20Adorable%20Ghost%20Story.7z.001",
+        "host": "itsfileditchfiles.st"
+      },
+      {
+        "url": "https://vikingfile.com/f/GAmQj9Oxw4",
+        "host": "vikingfile.com"
+      },
+      {
+        "url": "https://filesyard.com/f/RkP6C7tWDE",
+        "host": "filesyard.com"
+      }
+    ]
+  },
+  {
+    "title": "Vampire's Best Friend",
+    "url": "https://gamebounty.st/vampires-best-friend-free-pc-download",
+    "slug": "vampires-best-friend",
+    "appid": 3583530,
+    "has_appid": true,
+    "sources": "Gamebounty CSF",
+    "is_sovereign": false,
+    "mirrors": [
+      {
+        "url": "https://filesyard.com/f/Efkw43dV6J",
+        "host": "filesyard.com"
+      },
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/202dff374886e87e6790/Vampire%20s%20Best%20Friend.7z.001",
+        "host": "itsfileditchfiles.st"
+      },
+      {
+        "url": "https://vikingfile.com/f/muusH9H0cV",
+        "host": "vikingfile.com"
+      }
+    ]
+  },
+  {
+    "title": "Heart's Medicine - Season One",
+    "url": "https://gamebounty.st/hearts-medicine-season-one-free-pc-download",
+    "slug": "hearts-medicine-season-one",
+    "appid": 1277950,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://vikingfile.com/f/UerH1oa7OE",
+        "host": "vikingfile.com"
+      },
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/57a5c63c37e705ac9130/Heart%20s%20Medicine%20-%20Season%20One.7z.001",
+        "host": "itsfileditchfiles.st"
+      },
+      {
+        "url": "https://filesyard.com/f/6u7ueYPE3M",
+        "host": "filesyard.com"
+      }
+    ]
+  },
+  {
+    "title": "Poosh XL",
+    "url": "https://gamebounty.st/poosh-xl-free-pc-download",
+    "slug": "poosh-xl",
+    "appid": 2055910,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/1988e7bf566001378d3a/Poosh%20XL.7z.001",
+        "host": "itsfileditchfiles.st"
+      },
+      {
+        "url": "https://filesyard.com/f/FWMXR2WthS",
+        "host": "filesyard.com"
+      },
+      {
+        "url": "https://vikingfile.com/f/pg0X2cN7uS",
+        "host": "vikingfile.com"
+      }
+    ]
+  },
+  {
+    "title": "The Black Heart",
+    "url": "https://gamebounty.st/the-black-heart-free-pc-download",
+    "slug": "the-black-heart",
+    "appid": 1431780,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://vikingfile.com/f/Hl70rZ5PYp",
+        "host": "vikingfile.com"
+      },
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/f20d7f0c190ecf9f67b1/The%20Black%20Heart%20%282%29.7z.001",
+        "host": "itsfileditchfiles.st"
+      },
+      {
+        "url": "https://filesyard.com/f/rYNRBaTzPa",
+        "host": "filesyard.com"
+      }
+    ]
+  },
+  {
+    "title": "Planes, Bullets and Vodka",
+    "url": "https://gamebounty.st/planes-bullets-and-vodka-free-pc-download",
+    "slug": "planes-bullets-and-vodka",
+    "appid": 562360,
+    "has_appid": true,
+    "sources": "Gamebounty CSF + Sovereign",
+    "is_sovereign": true,
+    "mirrors": [
+      {
+        "url": "https://filesyard.com/f/8DtDcwSCF7",
+        "host": "filesyard.com"
+      },
+      {
+        "url": "https://itsfileditchfiles.st/balpha52/3477ed698a79c5eb153e/Planes%20Bullets%20and%20Vodka.7z.001",
+        "host": "itsfileditchfiles.st"
+      },
+      {
+        "url": "https://vikingfile.com/f/Bxrua3ZUrV",
+        "host": "vikingfile.com"
+      }
+    ]
+  },
+  {
     "title": "Fate Seeker II",
     "url": "https://gamebounty.st/fate-seeker-ii-free-pc-download",
     "slug": "fate-seeker-ii",
